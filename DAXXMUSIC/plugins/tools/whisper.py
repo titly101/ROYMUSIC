@@ -20,7 +20,7 @@ async def _whisper(_, inline_query):
                 title="💌 ᴡʜɪsᴘᴇʀ",
                 description=f"@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
                 input_message_content=InputTextMessageContent(f"💌 ᴜsᴀɢᴇ ➠ \n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
-                thumb_url="https://telegra.ph/file/21c69049c4855ac0a035b.jpg",
+                thumb_url="https://graph.org/file/ef82f289043a4fa74f8ff.jpg",
                 reply_markup=switch_btn
             )
         ]
