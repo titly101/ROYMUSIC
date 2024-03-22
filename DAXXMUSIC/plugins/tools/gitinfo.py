@@ -1,17 +1,17 @@
 import asyncio, os, time, aiohttp
 import aiohttp
 from pyrogram import filters
-from daxxhub import daxxhub as papadaxx
+from blackpink import blackpink as bp
 from DAXXMUSIC import app
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 ###
 @app.on_message(filters.command("blackpink"))
-async def daxxhub(_, message):
-    text = message.text[len("/daxxhub") :]
-    papadaxx(f"{text}").save(f"daxxhub_{message.from_user.id}.png")
-    await message.reply_photo(f"daxxhub_{message.from_user.id}.png")
-    os.remove(f"daxxhub_{message.from_user.id}.png")
+async def blackpink(_, message):
+    text = message.text[len("/blackpink") :]
+    bp(f"{text}").save(f"blackpink_{message.from_user.id}.png")
+    await message.reply_photo(f"blackpink_{message.from_user.id}.png")
+    os.remove(f"blackpink_{message.from_user.id}.png")
 
 
 ####
@@ -19,7 +19,7 @@ async def daxxhub(_, message):
 @app.on_message(filters.command(["github", "git"]))
 async def github(_, message):
     if len(message.command) != 2:
-        await message.reply_text("/git DAXXTEAM")
+        await message.reply_text("/git NYKAAXBOT")
         return
 
     username = message.text.split(None, 1)[1]
@@ -28,7 +28,7 @@ async def github(_, message):
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await message.reply_text("ʟᴏᴅᴇ ɢɪᴛʜᴜʙ ᴜsᴇʀɴᴀᴍᴇ ᴠᴀʟɪᴅ ᴡᴀʟᴀ ᴅᴀᴀʟ.")
+                return await message.reply_text("✦ ᴘʟᴇᴀsᴇ ᴘᴜᴛ ᴠᴀʟɪᴅ ɢɪᴛʜᴜʙ ᴜsᴇʀɴᴀᴍᴇ.")
 
             result = await request.json()
 
@@ -47,7 +47,6 @@ async def github(_, message):
 
                 caption = f"""ㅤㅤ✦ ɢɪᴛʜᴜʙ ɪɴғᴏ ᴏғ {name} ✦
                  
-•❅─────✧❅✦❅✧─────❅•
 ๏ ᴜsᴇʀɴᴀᴍᴇ ➠ {username}
 ๏ ʙɪᴏ ➠ {bio}
 ๏ ʟɪɴᴋ ➠ [Here]({url})
@@ -59,7 +58,7 @@ async def github(_, message):
 ๏ ғᴏʟʟᴏᴡᴇʀs ➠ {followers}
 ๏ ғᴏʟʟᴏᴡɪɴɢ ➠ {following}
 
-๏ ᴍᴀᴅᴇ ʙʏ ➠ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/roy_editx)"""
+๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ [๛ɴ ʏ ᴋ ᴀ ᴀ࿐](https://t.me/nykaaxbot)"""
 
             except Exception as e:
                 print(str(e))
@@ -71,4 +70,5 @@ async def github(_, message):
 
     # Send the message with the inline keyboard
     await message.reply_photo(photo=avatar_url, caption=caption, reply_markup=inline_keyboard)
+
             
