@@ -10,10 +10,6 @@ from DAXXMUSIC.plugins.play import play
 from DAXXMUSIC.plugins.play.pornplay import play
 
 
-#
-#####
-
-
 keyboard = InlineKeyboardMarkup([
         [
             InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data"), 
@@ -24,12 +20,11 @@ keyboard = InlineKeyboardMarkup([
 
 # Define your callback function
 @app.on_callback_query(filters.regex("^play"))
-async def play_callback(_, query: CallbackQuery):
+async def play_callback(_, query):
     # You can add more logic here before initiating playback
     await play(query.from_user.id)  # Assuming play function accepts user ID
     await query.answer("Playback started!")
         
-##########🖕
 
 @app.on_callback_query(filters.regex("^close_data"))
 async def close_callback(_, query):
@@ -56,11 +51,6 @@ async def get_video_stream(link):
     return video
 
 
-
-
-
-
-
 def get_video_info(title):
     url_base = f'https://www.xnxx.com/search/{title}'
     try:
@@ -80,8 +70,7 @@ def get_video_info(title):
     except Exception as e:
         print(f"Error: {e}")
     return None
-
-
+        
 
 @app.on_message(filters.command("porn"))
 async def get_random_video_info(client, message):
@@ -99,9 +88,6 @@ async def get_random_video_info(client, message):
              
     else:
         await message.reply(f"No video link found for '{title}'.")
-
-######
-
 
 
 @app.on_message(filters.command("xnxx"))
@@ -128,4 +114,5 @@ async def get_random_video_info(client, message):
         )
     else:
         await message.reply(f"No video link found for '{title}'.")
-            
+
+        
