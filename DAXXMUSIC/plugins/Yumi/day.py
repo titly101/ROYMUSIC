@@ -14,10 +14,11 @@ def date_to_day_command(client: Client, message: Message):
             day_of_week = date_object.strftime("%A")
 
             # Reply with the day of the week
-            message.reply_text(f"The day of the week for {input_date} is {day_of_week}.")
+            message.reply_text(f"✦ ᴛʜᴇ ᴅᴀʏ ᴏғ ᴛʜɪs ᴅᴀᴛᴇ {input_date} ɪs {day_of_week}.")
 
         else:
-            message.reply_text("Please provide a valid date in the format `/day 1947-08-15` ")
+            message.reply_text("✦ Please provide a valid date in the format `/day 2006-09-19` ")
 
     except ValueError as e:
         message.reply_text(f"Error: {str(e)}")
+        
