@@ -4,12 +4,22 @@ from datetime import datetime
 from telegraph import upload_file
 from PIL import Image , ImageDraw
 from pyrogram import *
-from pyrogram.types import *
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.enums import *
 
 #BOT FILE NAME
 from DAXXMUSIC import app as app
 from DAXXMUSIC.mongo.couples_db import _get_image, get_couple
+
+POLICE = [
+    [
+        InlineKeyboardButton(
+            text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ",
+            url=f"https://t.me/nykaaxbot?startgroup=true",
+        ),
+    ],
+]
+
 
 def dt():
     now = datetime.now()
@@ -35,11 +45,11 @@ today = str(dt()[0])
 async def ctest(_, message):
     cid = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
-        return await message.reply_text("ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs.")
+        return await message.reply_text("✦ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs.")
     try:
      #  is_selected = await get_couple(cid, today)
      #  if not is_selected:
-         msg = await message.reply_text("ɢᴇɴᴇʀᴀᴛɪɴɢ ᴄᴏᴜᴘʟᴇs ɪᴍᴀɢᴇ...")
+         msg = await message.reply_text("✦ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴄᴏᴜᴘʟᴇs ɪᴍᴀɢᴇ...")
          #GET LIST OF USERS
          list_of_users = []
 
@@ -71,10 +81,10 @@ async def ctest(_, message):
          img1 = Image.open(f"{p1}")
          img2 = Image.open(f"{p2}")
 
-         img = Image.open("DAXXMUSIC/assets/cppic.png")
+         img = Image.open("DAXXMUSIC/assets/COUPLES2.PNG")
 
-         img1 = img1.resize((437,437))
-         img2 = img2.resize((437,437))
+         img1 = img1.resize((390, 390))
+         img2 = img2.resize((390,390))
 
          mask = Image.new('L', img1.size, 0)
          draw = ImageDraw.Draw(mask) 
@@ -90,20 +100,21 @@ async def ctest(_, message):
 
          draw = ImageDraw.Draw(img)
 
-         img.paste(img1, (116, 160), img1)
-         img.paste(img2, (789, 160), img2)
+         img.paste(img1, (91, 215), img1)
+         img.paste(img2, (805, 215), img2)
 
          img.save(f'test_{cid}.png')
     
          TXT = f"""
-**ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
+**❅ ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ⏤͟͟͞͞★
 
-{N1} + {N2} = 💚
+ {N1} + {N2} = 💌
 
-ɴᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !!**
+❅ ɴᴇxᴛ ᴄᴏᴜᴘʟᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !**
 """
     
-         await message.reply_photo(f"test_{cid}.png", caption=TXT)
+         await message.reply_photo(f"test_{cid}.png", caption=TXT, reply_markup=InlineKeyboardMarkup(POLICE),
+    )
          await msg.delete()
          a = upload_file(f"test_{cid}.png")
          for x in a:
@@ -139,10 +150,11 @@ async def ctest(_, message):
        pass
          
 
-__mod__ = "COUPLES"
+__mod__ = "ᴄᴏᴜᴘʟᴇ"
 __help__ = """
-**» /couples** - Get Todays Couples Of The Group In Interactive View
+**✦ /couples** - Get Todays Couples Of The Group In Interactive View
 """
+
 
 
 
