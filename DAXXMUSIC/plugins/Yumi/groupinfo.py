@@ -1,6 +1,13 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from DAXXMUSIC import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+    ],
+]
 
 @app.on_message(filters.command("groupinfo", prefixes="/"))
 async def get_group_status(_, message: Message):
@@ -21,16 +28,16 @@ async def get_group_status(_, message: Message):
     premium_acc = banned = deleted_acc = bot = 0  # You should replace these variables with actual counts.
 
     response_text = (
-        f"•❅─────✧❅✦❅✧─────❅•\n\n"
+        f"❅─────✧❅✦❅✧─────❅\n\n"
         f"๏ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ➠ {group.title}\n"
         f"๏ ɢʀᴏᴜᴘ ɪᴅ ➠ {group.id}\n"
         f"๏ ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs ➠ {total_members}\n"
         f"๏ ᴜsᴇʀɴᴀᴍᴇ ➠ @{group_username}\n"
         f"๏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ➠ {group_description or 'N/A'}\n\n"
-        f"๏ ᴍᴀᴅᴇ ʙʏ ➠ ʀᴏʏ-ᴇᴅɪᴛx"
+        f"๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ ๛ɴ ʏ ᴋ ᴀ ᴀ࿐"
     )
     
-    await message.reply(response_text)
+    await message.reply((response_text),reply_markup=InlineKeyboardMarkup(EVAA),)
 
 
 
@@ -50,28 +57,6 @@ def group_status(client, message):
     else:
         status_text += "Username: None"
 
-    message.reply_text(status_text)
+    message.reply_text((status_text),reply_markup=InlineKeyboardMarkup(EVAA),)
 
-
-#########
-
-""" ***                                                                       
-────────────────────────────────────────────────────────────────────────
-─████████████────██████████████──████████──████████──████████──████████─
-─██░░░░░░░░████──██░░░░░░░░░░██──██░░░░██──██░░░░██──██░░░░██──██░░░░██─
-─██░░████░░░░██──██░░██████░░██──████░░██──██░░████──████░░██──██░░████─
-─██░░██──██░░██──██░░██──██░░██────██░░░░██░░░░██──────██░░░░██░░░░██───
-─██░░██──██░░██──██░░██████░░██────████░░░░░░████──────████░░░░░░████───
-─██░░██──██░░██──██░░░░░░░░░░██──────██░░░░░░██──────────██░░░░░░██─────
-─██░░██──██░░██──██░░██████░░██────████░░░░░░████──────████░░░░░░████───
-─██░░██──██░░██──██░░██──██░░██────██░░░░██░░░░██──────██░░░░██░░░░██───
-─██░░████░░░░██──██░░██──██░░██──████░░██──██░░████──████░░██──██░░████─
-─██░░░░░░░░████──██░░██──██░░██──██░░░░██──██░░░░██──██░░░░██──██░░░░██─
-─████████████────██████──██████──████████──████████──████████──████████─
-────────────────────────────────────────────────────────────────────────**"""
-
-
-
-
-####
 
