@@ -7,21 +7,21 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID"))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("29594350"))
+API_HASH = getenv("f06e931b7d662106b711d36be91230ac")
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("7321645157:AAHkMWAkT9nMk3JySxIqqQf8Pf5OYMONvnU")
 # Add Owner Username without @ 
-OWNER_USERNAME = getenv("OWNER_USERNAME", "roy_editx")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "MANI_145_ACB")
 # Get Your bot username
-BOT_USERNAME = getenv("BOT_USERNAME", "NykaaxBot")
+BOT_USERNAME = getenv("BOT_USERNAME", "SOFI_MUSCBOT")
 # Don't Add style font 
-BOT_NAME = getenv("BOT_NAME", "NYKAA MUSIC")
+BOT_NAME = getenv("BOT_NAME", "SOFIA MUSIC")
 #get Your Assistant User name
-ASSUSERNAME = getenv("ASSUSERNAME", "NYKAA_ASS")
+ASSUSERNAME = getenv("ASSUSERNAME", "SOFI_ASS")
 EVALOP = list(map(int, getenv("EVALOP", "6195725562").split()))
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://knight_rider:GODGURU12345@knight.jm59gu9.mongodb.net/?retryWrites=true&w=majority")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "10000"))
 
@@ -31,10 +31,10 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", "-1001929735324"))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1002236862147"))
 
 # Get this value from  on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", "6195725562"))
+OWNER_ID = int(getenv("OWNER_ID", "6180015201"))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -51,8 +51,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/roy_editx")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/the_friendz")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Sofiya_Ed")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/BOT_CRATION")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -79,7 +79,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824"))
 
 
 # Ge@STRINGSEASO_NBOT2 session from @STRINGSEASO_NBOT
-STRING1 = getenv("STRING_SESSION", None)
+STRING1 = getenv("STRING_SESSION", "BQFTWCUAiQOythdHlttZPbI5AVa3GYxpfeuiN7PtJNGQnF2vCoBP5IHON0QRJfktCkQaPJ2GfZZbzX9qhVr7iszCGOtuYHNwjB_1j55JgX2sdUoKhJmaIuhxbNWG12Kfr-aG6i3i2IMUD9YlibY3wn2hDQOUhmBTLT-oQ7EAxZtFQMBxFkwKv-8jDyu18XTY9aMlzBlesq0zLJhwD1WCwlsAtgTHwydP95GZit53jLyuQW33rXLULLIQKo2gzgKGUMKdjIUmtKEM0IZJFkvtMvW9AZbvuf5hvtVFKuy6K5STZnO_Pev1CPFXqyRtPSP8eenaHnVcPOh1j_J8qDwBcybVOGQH9gAAAAGAa1dFAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
